@@ -8,10 +8,10 @@ const section = (props) => {
   return (
     <div>
       <div className={classes.SectionTitle}>
-        <h1 className='display-3'>Section Title</h1>
+        <h1 className='display-3'>{props[0].section}</h1>
         <Buttons />
       </div>
-      <Item />
+      <Item {...props[0].items} />
     </div>
   );
 };
