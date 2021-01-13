@@ -1,0 +1,14 @@
+.Item {
+  text-align: left;
+  position: relative;
+  border-bottom: 1px solid gray;
+}
+
+.Price {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

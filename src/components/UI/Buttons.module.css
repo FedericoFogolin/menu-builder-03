@@ -1,0 +1,19 @@
+.ButtonCircle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.Toolbar {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
