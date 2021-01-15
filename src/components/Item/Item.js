@@ -6,7 +6,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Buttons from "../UI/Buttons";
 import LableInput from "../UI/Inputs/LableInput";
-import PriceInput from "../UI/Inputs/PriceInput";
 import EditLogo from "../UI/EditLogo/EditLogo";
 
 const item = (props) => {
@@ -15,25 +14,31 @@ const item = (props) => {
       <Row>
         <Col>
           <EditLogo />
-          <p className='lead'>
-            <LableInput description={props[0].item} focused={true} />
-          </p>
+          <LableInput
+            value={props[0].item}
+            focused={false}
+            type='text'
+            changed={props.lableChanged}
+          />
         </Col>
       </Row>
 
       <Row>
         <Col>
-          <p className={`small ${classes.Description}`}>
-            <LableInput
-              type='description'
-              description={props[0].description}
-              focused={true}
-            />
-          </p>
+          <LableInput
+            type='text'
+            value={props[0].description}
+            focused={false}
+            changed={props.lableChanged}
+          />
         </Col>
         <Col>
-          <PriceInput description={props[0].price} focused={true} />
-          <label>€</label>
+          <LableInput
+            value={props[0].price}
+            focused={false}
+            type='number'
+            changed={props.lableChanged}
+          />
         </Col>
         <Col className='col'>
           <Buttons />

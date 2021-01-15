@@ -11,7 +11,7 @@ const section = (props) => {
         <h1 className='display-3'>{props[0].section}</h1>
         <Buttons />
       </div>
-      <Item {...props[0].items} />
+      <Item {...props[0].items} lableChanged={props.lableChanged} />
     </div>
   );
 };

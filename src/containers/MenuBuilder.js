@@ -1,28 +1,38 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
 
 import classes from "./MenuBuilder.module.css";
 import Section from "../components/Section/Section";
 
-const sections = [
-  {
-    section: "Section Title 1",
-    items: [
+class MenuBuilder extends Component {
+  state = {
+    sections: [
       {
-        item: "Item 1",
-        description: "Item Description",
-        price: 10
+        section: "Section Title 1",
+        items: [
+          {
+            item: "Item 1",
+            description: "Item Description",
+            price: 10
+          }
+        ]
       }
     ]
-  }
-];
+  };
 
-class MenuBuilder extends Component {
+  onLableChangeHandler = (e) => {
+    const sections = [...this.state.sections];
+
+    console.log(sections[0].items);
+  };
+
   render() {
     return (
       <div className={classes.MenuBuilder}>
         <h1 className='display-1'>MENU TITLE</h1>
-        <Section {...sections} />
+        <Section
+          {...this.state.sections}
+          lableChanged={(e) => this.onLableChangeHandler(e)}
+        />
       </div>
     );
   }

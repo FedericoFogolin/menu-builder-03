@@ -1,8 +1,5 @@
 import React from "react";
 
-import Image from "react-bootstrap/Image";
-import Aux from "../../../hoc/Aux/Aux";
-
 const editLogo = () => {
   return (
     <svg
