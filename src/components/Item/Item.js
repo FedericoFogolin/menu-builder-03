@@ -1,6 +1,9 @@
 import React from "react";
 
 import classes from "./Item.module.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Buttons from "../UI/Buttons";
 import LableInput from "../UI/Inputs/LableInput";
 import PriceInput from "../UI/Inputs/PriceInput";
@@ -8,18 +11,18 @@ import EditLogo from "../UI/EditLogo/EditLogo";
 
 const item = (props) => {
   return (
-    <div className={`container ${classes.Item}`}>
-      <div className='row'>
-        <div className='col'>
+    <Container className={classes.Item}>
+      <Row>
+        <Col>
           <EditLogo />
           <p className='lead'>
             <LableInput description={props[0].item} focused={true} />
           </p>
-        </div>
-      </div>
+        </Col>
+      </Row>
 
-      <div className='row'>
-        <div className='col'>
+      <Row>
+        <Col>
           <p className={`small ${classes.Description}`}>
             <LableInput
               type='description'
@@ -27,16 +30,16 @@ const item = (props) => {
               focused={true}
             />
           </p>
-        </div>
-        <div className='col'>
+        </Col>
+        <Col>
           <PriceInput description={props[0].price} focused={true} />
           <label>€</label>
-        </div>
-        <div className='col'>
+        </Col>
+        <Col className='col'>
           <Buttons />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
