@@ -19,10 +19,30 @@ class MenuBuilder extends Component {
     ]
   };
 
-  onLableChangeHandler = (e) => {
+  onLableChangeHandler = (e, labelType) => {
     const sections = [...this.state.sections];
 
-    console.log(sections[0].items);
+    switch (labelType) {
+      case "item":
+        sections[0].items[0].item = e.target.value;
+        return this.setState({
+          sections: sections
+        });
+
+      case "description":
+        sections[0].items[0].description = e.target.value;
+        return this.setState({
+          sections: sections
+        });
+
+      case "price":
+        sections[0].items[0].price = e.target.value;
+        return this.setState({
+          sections: sections
+        });
+      default:
+        return this.state;
+    }
   };
 
   render() {
@@ -31,7 +51,7 @@ class MenuBuilder extends Component {
         <h1 className='display-1'>MENU TITLE</h1>
         <Section
           {...this.state.sections}
-          lableChanged={(e) => this.onLableChangeHandler(e)}
+          parentCallback={this.onLableChangeHandler}
         />
       </div>
     );

@@ -6,19 +6,18 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Buttons from "../UI/Buttons";
 import LableInput from "../UI/Inputs/LableInput";
-import EditLogo from "../UI/EditLogo/EditLogo";
 
 const item = (props) => {
   return (
     <Container className={classes.Item}>
       <Row>
         <Col>
-          <EditLogo />
           <LableInput
+            id='item'
+            changed={props.parentCallback}
             value={props[0].item}
             focused={false}
             type='text'
-            changed={props.lableChanged}
           />
         </Col>
       </Row>
@@ -26,18 +25,20 @@ const item = (props) => {
       <Row>
         <Col>
           <LableInput
+            id='description'
+            changed={props.parentCallback}
             type='text'
             value={props[0].description}
             focused={false}
-            changed={props.lableChanged}
           />
         </Col>
         <Col>
           <LableInput
+            id='price'
+            changed={props.parentCallback}
             value={props[0].price}
             focused={false}
             type='number'
-            changed={props.lableChanged}
           />
         </Col>
         <Col className='col'>
