@@ -40,6 +40,12 @@ class MenuBuilder extends Component {
         return this.setState({
           sections: sections
         });
+
+      case "section":
+        sections[0].section = e.target.value;
+        return this.setState({
+          sections: sections
+        });
       default:
         return this.state;
     }
